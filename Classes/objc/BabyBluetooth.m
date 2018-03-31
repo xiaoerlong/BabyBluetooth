@@ -242,7 +242,7 @@
     [[babySpeaker callback]setFilterOnDiscoverPeripherals:filter];
 }
 //设置连接Peripherals的规则
-- (void)setFilterOnConnectToPeripherals:(BOOL (^)(NSString *peripheralName, NSDictionary *advertisementData, NSNumber *RSSI))filter {
+- (void)setFilterOnConnectToPeripherals:(BOOL (^)(NSString *peripheralName, NSDictionary *advertisementData, NSNumber *RSSI, NSString *uuid))filter {
     [[babySpeaker callback]setFilterOnconnectToPeripherals:filter];
 }
 //设置查找Peripherals的规则
@@ -252,7 +252,7 @@
 }
 //设置连接Peripherals的规则
 - (void)setFilterOnConnectToPeripheralsAtChannel:(NSString *)channel
-                                     filter:(BOOL (^)(NSString *peripheralName, NSDictionary *advertisementData, NSNumber *RSSI))filter {
+                                     filter:(BOOL (^)(NSString *peripheralName, NSDictionary *advertisementData, NSNumber *RSSI, NSString *uuid))filter {
     [[babySpeaker callbackOnChnnel:channel createWhenNotExist:YES] setFilterOnconnectToPeripherals:filter];
 }
 

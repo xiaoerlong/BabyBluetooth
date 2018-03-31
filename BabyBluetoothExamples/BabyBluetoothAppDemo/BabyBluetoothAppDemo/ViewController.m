@@ -110,6 +110,14 @@
         }
         return NO;
     }];
+    
+    [baby setFilterOnConnectToPeripherals:^BOOL(NSString *peripheralName, NSDictionary *advertisementData, NSNumber *RSSI, NSString *uuid) {
+        // 通过制定外设的UUID连接
+        if (uuid) {
+            return YES;
+        }
+        return NO;
+    }];
 
     
     [baby setBlockOnCancelAllPeripheralsConnectionBlock:^(CBCentralManager *centralManager) {
